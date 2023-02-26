@@ -24,4 +24,8 @@
   - Video: [Criando logs em Aplicações Java.](https://www.youtube.com/watch?v=-9q0eDvbpDk)
   - Conteúdo escrito: [Criando logs em Aplicações Java.](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/criando-logs-em-aplicacoes-java.md)
 
+### Atividades Preparatórias
+Video: [Implementando Logs em uma Api](https://www.youtube.com/watch?v=kG7g3XXb7Uw)
+
+Caso tenha interesse o código está disponível em [https://github.com/paulasantanazup/livraria/tree/monitoria-tracing-tc-1-tl-1](https://github.com/paulasantanazup/livraria/tree/monitoria-tracing-tc-1-tl-1)
 

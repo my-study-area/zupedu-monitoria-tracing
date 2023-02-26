@@ -18,6 +18,7 @@
 - Conhecendo um pouco sobre Log4j, Logback e slf4j
   - Video: [Conhecendo um pouco sobre Log4j, Logback e slf4j](https://www.youtube.com/watch?v=4dZGhHeFd_o)
   - Conteúdo escrito: [Conhecendo um pouco sobre Log4j, Logback e slf4j](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/diferencas-entre-log4j-logback-e-slf4j.md)
+  - Outra playlist: [https://www.youtube.com/playlist?list=PLH_lE515NYR21S0L_33yPU1-usoC-hknA](https://www.youtube.com/playlist?list=PLH_lE515NYR21S0L_33yPU1-usoC-hknA)
 
 - Criando logs em Aplicações Java.
   - Video: [Criando logs em Aplicações Java.](https://www.youtube.com/watch?v=-9q0eDvbpDk)

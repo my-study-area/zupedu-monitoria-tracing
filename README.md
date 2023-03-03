@@ -29,3 +29,20 @@ Video: [Implementando Logs em uma Api](https://www.youtube.com/watch?v=kG7g3XXb7
 
 Caso tenha interesse o código está disponível em [https://github.com/paulasantanazup/livraria/tree/monitoria-tracing-tc-1-tl-1](https://github.com/paulasantanazup/livraria/tree/monitoria-tracing-tc-1-tl-1)
 
+### Atividades Obrigatórias
+**Adicionando Logs na aplicação**
+Seu time esta prestes a entregar uma funcionalidade de cadastro e deleção de pessoas de um dos serviços que vocês possuem.
+
+Você estava analisando a Pr que foi aberta para o serviço de gerenciamento de funcionários.
+
+Como você identificou ausência dos logs, resolveu implementar nos pontos que considerava mais importantes.
+
+Projeto: [Projeto Base ](https://github.com/zup-academy/gerenciador-de-pessoas/tree/monitoria-e-tracing-tc1-tl2)
+
+Resposta do especialista: 
+- [https://gist.github.com/paulasantanazup/1946a5cd725665374676c5e8ac7662eb](https://gist.github.com/paulasantanazup/1946a5cd725665374676c5e8ac7662eb)
+- [https://gist.github.com/paulasantanazup/1694c30d9da5d860d835b61c94a19481](https://gist.github.com/paulasantanazup/1694c30d9da5d860d835b61c94a19481)
+
+- [https://gist.github.com/paulasantanazup/7398e478cb1cce7faa5da4d9bff3907a](https://gist.github.com/paulasantanazup/7398e478cb1cce7faa5da4d9bff3907a)
+
+> Caso você queira continuar aprendendo mais sobre o assunto recomendamos a leitura do livro Software Telemetry: Reliable Logging and Monitoring e da documentação oficial do Slf4j, Spring Boot Loggin e do Logback.

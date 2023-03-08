@@ -46,3 +46,14 @@ Resposta do especialista:
 - [https://gist.github.com/paulasantanazup/7398e478cb1cce7faa5da4d9bff3907a](https://gist.github.com/paulasantanazup/7398e478cb1cce7faa5da4d9bff3907a)
 
 > Caso você queira continuar aprendendo mais sobre o assunto recomendamos a leitura do livro Software Telemetry: Reliable Logging and Monitoring e da documentação oficial do Slf4j, Spring Boot Loggin e do Logback.
+
+**Melhorando logs de uma aplicação**
+
+Você vai iniciar uma feature em um serviço de banco digital.
+Mas decidiu realizar alguns ajustes nos logs seguindo as boas práticas, já que você pode necessitar dos logs percebeu que eles não estão implementados de forma que auxilie a realização de debug em produção.
+
+[Projeto: Projeto Base](https://github.com/zup-academy/bancodigital/tree/monitoria-e-tracing-tc1-tl3)
+
+Resposta do especialista:
+- [https://gist.github.com/paulasantanazup/78e16a468cf45a63daf2aec6c88aa494](https://gist.github.com/paulasantanazup/78e16a468cf45a63daf2aec6c88aa494)
+- [https://gist.github.com/paulasantanazup/f61d50be124b13fc7c454772c9b0bedb](https://gist.github.com/paulasantanazup/f61d50be124b13fc7c454772c9b0bedb)

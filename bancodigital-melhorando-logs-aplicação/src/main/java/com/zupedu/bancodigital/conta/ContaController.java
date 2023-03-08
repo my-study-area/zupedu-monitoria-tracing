@@ -19,7 +19,6 @@ public class ContaController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> inserir(@RequestBody ContaRequest request){
-        logger.info("Cadastrando Conta");
         var conta = request.toModel();
 
         if(contaRepository.findByDocumentoTitular(conta.getDocumentoTitular()).isPresent()){
@@ -29,7 +28,8 @@ public class ContaController {
         }else{
             conta = contaRepository.save(conta);
 
-            logger.info("Conta cadastrada");
+            logger.info("Nova conta de id {} cadastrada com sucesso para a agência {} ",
+                    conta.getId(), conta.getAgencia());
 
             return ResponseEntity
                     .status(HttpStatus.CREATED)
@@ -41,7 +41,7 @@ public class ContaController {
     public void excluir(@PathVariable Long id){
         var conta = contaRepository.findById(id).orElseThrow(ContaIdInexistenteException::new);
 
-        logger.info("Conta excluída com sucesso");
+        logger.info("Conta de id {} foi excluída com sucesso", id);
 
         contaRepository.delete(conta);
     }

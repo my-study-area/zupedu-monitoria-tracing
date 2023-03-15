@@ -78,6 +78,13 @@ Resposta do especialista:
 Implementando métricas em uma aplicação Java com Spring
 
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
+- [Código utilizado na aplicação](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)
+
+### Atividades Obrigatórias
+
+
+## Links
+- [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)
 - [Spring Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html)
 - []()

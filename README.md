@@ -57,3 +57,27 @@ Mas decidiu realizar alguns ajustes nos logs seguindo as boas práticas, já que
 Resposta do especialista:
 - [https://gist.github.com/paulasantanazup/78e16a468cf45a63daf2aec6c88aa494](https://gist.github.com/paulasantanazup/78e16a468cf45a63daf2aec6c88aa494)
 - [https://gist.github.com/paulasantanazup/f61d50be124b13fc7c454772c9b0bedb](https://gist.github.com/paulasantanazup/f61d50be124b13fc7c454772c9b0bedb)
+
+## Monitorando e gerenciando sua aplicação
+
+### Teorias Necessárias
+- O que é monitoramento de Software ?
+  - [Video: O que é monitoramento de Software?](https://www.youtube.com/watch?v=LWY47uBK3rE&ab_channel=4Zuppers)
+  - [Conteúdo escrito: O que é monitoramento de Software?](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/metricas-e-monitoramento-de-software.md)
+  - [Conteúdo escrito: Conhecendo o Spring Actuator](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/conhecendo-o-spring-actuator.md)
+
+- O que é APM
+  - [Video: O que é APM](https://www.youtube.com/watch?v=0maXfL6ALdw&ab_channel=4Zuppers)
+  - [Conteúdo escrito: O que é APM](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/o-que-e-apm.md)
+
+- Diferença entre monitoramento e observabilidade
+  - [Video: Diferença entre monitoramento e observabilidade](https://www.youtube.com/watch?v=JTQdEgkYJqM&ab_channel=4Zuppers)
+  - [Conteúdo escrito: Diferença entre monitoramento e observabilidade](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/o-que-e-apm.md)
+
+### Atividades Preparatórias
+Implementando métricas em uma aplicação Java com Spring
+
+- [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
+- [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)
+- [Spring Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html)
+- []()

@@ -81,7 +81,41 @@ Implementando métricas em uma aplicação Java com Spring
 - [Código utilizado na aplicação](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)
 
 ### Atividades Obrigatórias
+**Adicionando métricas na aplicação Java/Spring**
 
+Resposta do Especialista
+
+Configuração das informações da aplicação:
+```properties
+management.endpoints.web.exposure.include= info
+management.info.env.enabled= true
+info.application.name = Banco Digital
+info.application.description = Descrição da aplicação
+```
+
+Informações das propriedades:
+```properties
+management.endpoints.web.exposure.include= info,configprops
+```
+
+Informações detalhadas de healt:
+```properties
+management.endpoint.health.show-details=always
+management.endpoints.web.exposure.include= info, configprops, health
+```
+
+Informaçoes do prometheus:
+```properties
+management.endpoints.web.exposure.include= info,configprops,prometheus
+```
+e adicionar a dependência no pom.xml:
+```xml
+<dependency>
+  <groupId>io.micrometer</groupId>
+  <artifactId>micrometer-registry-prometheus</artifactId>
+  <scope>runtime</scope>
+</dependency>
+```
 
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)

@@ -14,3 +14,19 @@ spring:
     console:
       enabled: true
       path: /h2
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,configprops,prometheus"
+  info:
+    env:
+      enabled: true
+
+info:
+  application:
+    name: Banco Digital com métricas
+    description: Aplicação feita para Treinamento de Métricas e monitoramento

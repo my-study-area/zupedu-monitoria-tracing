@@ -117,6 +117,19 @@ e adicionar a dependência no pom.xml:
 </dependency>
 ```
 
+**Implementando Spring Actuator em seu projeto**
+
+Você esta desenvolvendo uma feature na aplicação de pedidos e uma das tasks envolve a configuração do Spring Actuator para métricas da aplicação.
+Na task está informando que é necessário adicionar informação sobre o status da aplicação, sobre o status do banco de dados e dos jobs que serão construídos na feature.
+
+Você irá implementar de acordo com o que foi solicitado.
+
+[Projeto base](https://github.com/zup-academy/pedidos/tree/migrations-tc2-tl3)
+
+Resposta do especialista
+
+- [https://gist.github.com/paulasantanazup/f6037a9b74c38b3782abd2d8946e36e9](https://gist.github.com/paulasantanazup/f6037a9b74c38b3782abd2d8946e36e9)
+
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)

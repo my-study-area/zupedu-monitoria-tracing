@@ -130,6 +130,19 @@ Resposta do especialista
 
 - [https://gist.github.com/paulasantanazup/f6037a9b74c38b3782abd2d8946e36e9](https://gist.github.com/paulasantanazup/f6037a9b74c38b3782abd2d8946e36e9)
 
+## Pesquisando e analisando logs
+
+1 - O que é o Cloudwatch
+  - [Video: O que é o Cloudwatch](https://www.youtube.com/watch?v=HcDPzBh2SEE&ab_channel=4Zuppers)
+  - [Conteúdo escrito: O que é o Cloudwatch](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/o-que-e-cloudwatch.md)
+
+2 - Como enviar logs no Cloudwatch
+  - [Video: Como enviar logs no Cloudwatch](https://www.youtube.com/watch?v=6mcWnAEsmOg&ab_channel=4Zuppers)
+  - [Conteúdo escrito: Como enviar logs no Cloudwatch](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/como-enviar-logs-no-cloudwatch.md)
+
+3 - Como pesquisar logs no Cloudwatch
+  - [Video: Como pesquisar logs no Cloudwatch](https://www.youtube.com/watch?v=IZrVkDNdxWk&ab_channel=4Zuppers) 
+
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)

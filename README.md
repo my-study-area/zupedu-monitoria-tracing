@@ -132,6 +132,7 @@ Resposta do especialista
 
 ## Pesquisando e analisando logs
 
+### Teorias Necessárias
 1 - O que é o Cloudwatch
   - [Video: O que é o Cloudwatch](https://www.youtube.com/watch?v=HcDPzBh2SEE&ab_channel=4Zuppers)
   - [Conteúdo escrito: O que é o Cloudwatch](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/o-que-e-cloudwatch.md)
@@ -142,6 +143,112 @@ Resposta do especialista
 
 3 - Como pesquisar logs no Cloudwatch
   - [Video: Como pesquisar logs no Cloudwatch](https://www.youtube.com/watch?v=IZrVkDNdxWk&ab_channel=4Zuppers) 
+
+### Atividades Preparatórias
+- [Video: Buscanco logs da aplicação de Livraria no Cloudwatch](https://www.youtube.com/watch?v=qS8dTir6RO0&ab_channel=4Zuppers)
+- [Código base](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc3-tl1)
+
+Crie uma instância EC2 com a imagem Amazon Linux 2023 e a Role com a policy CloudWatchAgentServerPolicy
+```bash
+# gera o package da aplicação localmente
+mvn package
+
+# copia o jar local para o EC2
+scp -i ~/Downloads/YOUR-FILE.pem  target/livraria-0.0.1-SNAPSHOT.jar <SERVER>:~
+
+# passos realizados dentro do ec2
+
+# instala o java 11
+sudo yum install java-11-amazon-corretto-headless
+
+# instala docker
+sudo yum install docker 
+
+#inicia o serviço do docker
+sudo service docker start
+
+# adiciona permissão ao usuário
+sudo usermod -a -G docker ec2-user
+
+# instala o git
+sudo yum install -y git
+
+#instalar docker-compose: 
+# https://gist.github.com/npearce/6f3c7826c7499587f00957fee62f8ee9
+
+# cria arquivo docker-compose.yml
+cat <<EOT >> docker-compose.yml
+line 1
+line 2
+version: '3.0'
+services:
+  db:
+    image: postgres
+    restart: always
+    hostname: dblivraria
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=livraria
+EOT
+
+# inicia o postgres
+docker-compose up -d db
+
+# wizard para criação do arquivo de configuração do agent do cloudwatch
+/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+
+# local do arquivo gerado
+/opt/aws/amazon-cloudwatch-agent/bin/config.json
+
+# para evitar erros
+# fonte: https://github.com/awsdocs/amazon-cloudwatch-user-guide/issues/54
+sudo mkdir -p /usr/share/collectd/
+sudo touch /usr/share/collectd/types.db
+
+# inicia o agente
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json
+
+# inicia aplicação
+java -jar livraria-0.0.1-SNAPSHOT.jar
+
+# cadastrar categoria localmente no EC2
+curl --location 'localhost:8080/categorias' \
+--header 'Content-Type: application/json' \
+--data '{
+    "nome": "categoria 2"
+}'
+
+# cadastrar autor
+curl --location 'localhost:8080/autores' \
+--header 'Content-Type: application/json' \
+--data '{
+  "nome": "José Martins",
+  "biografia": "Nasceu em .. e morreu em ...",
+  "nascimento": "01-01-1974",
+  "nacionalidade": "brasileiro"
+}'
+
+# cadastrar livro
+curl --location 'localhost:8080/livros' \
+--header 'Content-Type: application/json' \
+--data '{
+  "titulo": "titulo 1",
+  "dataDeLancamento": "19-03-2023",
+  "resumo": "resumo",
+  "idioma": "português",
+  "idCategoria": "1",
+  "idAutor": "1",
+  "formato": "IMPRESSO_CAPA_DURA",
+  "paginas": "245"
+}'
+```
+
+Fontes:
+- [https://www.youtube.com/watch?v=U7X3ehGZYwQ&ab_channel=SkillCurb](https://www.youtube.com/watch?v=U7X3ehGZYwQ&ab_channel=SkillCurb)
+- [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-commandline-fleet.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-commandline-fleet.html)
 
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)

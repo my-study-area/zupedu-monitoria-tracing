@@ -150,6 +150,9 @@ Resposta do especialista
 
 Crie uma instância EC2 com a imagem Amazon Linux 2023 e a Role com a policy CloudWatchAgentServerPolicy
 ```bash
+# caminho do repositório com a aplicação
+https://github.com/my-study-area/zupedu-monitoria-tracing/tree/main/livraria-implementando-log-aplicacao-spring
+
 # gera o package da aplicação localmente
 mvn package
 
@@ -178,8 +181,6 @@ sudo yum install -y git
 
 # cria arquivo docker-compose.yml
 cat <<EOT >> docker-compose.yml
-line 1
-line 2
 version: '3.0'
 services:
   db:
@@ -197,11 +198,17 @@ EOT
 # inicia o postgres
 docker-compose up -d db
 
+# instala agent do cloudwatch
+sudo yum install amazon-cloudwatch-agent -y
+
 # wizard para criação do arquivo de configuração do agent do cloudwatch
-/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
+
+# caminho do arquivo de logs no ec2
+/home/ec2-user/logs/spring-boot-logger.log
 
 # local do arquivo gerado
-/opt/aws/amazon-cloudwatch-agent/bin/config.json
+cat /opt/aws/amazon-cloudwatch-agent/bin/config.json
 
 # para evitar erros
 # fonte: https://github.com/awsdocs/amazon-cloudwatch-user-guide/issues/54

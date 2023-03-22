@@ -250,6 +250,19 @@ Fontes:
 - [https://www.youtube.com/watch?v=U7X3ehGZYwQ&ab_channel=SkillCurb](https://www.youtube.com/watch?v=U7X3ehGZYwQ&ab_channel=SkillCurb)
 - [https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-commandline-fleet.html](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-commandline-fleet.html)
 
+### Atividades Obrigatórias
+**Fazendo debug de logs no Cloudwatch**
+Você recebeu um chamado para analisar um problema que esta ocorrendo na api do banco digital, você deverá entender através dos logs no Cloudwatch o que esta ocorrendo quando é feito o cadastro de uma nova conta.
+Importante:
+
+Para sua autonomia nesta parte do treinamento você deverá seguir os passos descritos no vídeo abaixo após clonar o projeto base
+
+[Video: instruções sobre o ambiente](https://www.youtube.com/watch?v=BuDS74K6oMU)
+
+O código que deverá utilizar como base:
+
+[Projeto: Projeto Base](https://github.com/zup-academy/bancodigital/tree/monitoria-e-tracing-tc3-tl1)
+
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)

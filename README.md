@@ -270,6 +270,11 @@ O código que deverá utilizar como base:
 
 [Projeto: Projeto Base](https://github.com/zup-academy/bancodigital/tree/monitoria-e-tracing-tc3-tl1)
 
+**Seleção de dados no Cloudwatch**
+Você esta acompanhando os logs de produção do serviço de conta digital e precisa através do Cloudwatch entender a quantidade de erros que foram gerado nas últimas 24 horas.
+
+[Projeto: Projeto Base](https://github.com/zup-academy/bancodigital/tree/monitoria-e-tracing-tc1-tl3)
+
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)

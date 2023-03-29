@@ -275,6 +275,27 @@ Você esta acompanhando os logs de produção do serviço de conta digital e pre
 
 [Projeto: Projeto Base](https://github.com/zup-academy/bancodigital/tree/monitoria-e-tracing-tc1-tl3)
 
+## Criando Dashboards
+
+### Teorias Necessárias
+1 - O que é o Prometheus?
+- [Video: O que é o Prometheus?](https://www.youtube.com/watch?v=_GJOS4c3x-Q&ab_channel=4Zuppers)
+- [Conteúdo escrito: O que é o Prometheus?](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/o-que-e-prometheus.md)
+
+2 - O que é o Micrometer e Grafana?
+- [Video: O que é o Micrometer e Grafana?](https://www.youtube.com/watch?v=GtBTwkL7ri0&ab_channel=4Zuppers) 
+- [Conteúdo escrito: O que é o Micrometer](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/o-que-e-o-micrometer.md)
+- [Conteúdo escrito: O que é o Grafana](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/o-que-e-o-grafana.md)
+
+3 - Trabalhando com Prometheus, Grafana e micrometer
+- [Video: Trabalhando com Prometheus, Grafana e micrometer](https://www.youtube.com/watch?v=xDgpakaZSZE&ab_channel=4Zuppers) 
+
+4 - Utilizando PromQl
+- [Video: Utilizando PromQl](https://www.youtube.com/watch?v=9wa7ZF5uUII&ab_channel=4Zuppers)
+
+5 - Criando painéis no Grafana
+- [Video: Criando painéis no Grafana](https://www.youtube.com/watch?v=UQmGFK9cg48&ab_channel=4Zuppers) 
+
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)

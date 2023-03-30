@@ -296,6 +296,11 @@ Você esta acompanhando os logs de produção do serviço de conta digital e pre
 5 - Criando painéis no Grafana
 - [Video: Criando painéis no Grafana](https://www.youtube.com/watch?v=UQmGFK9cg48&ab_channel=4Zuppers) 
 
+### Atividades Preparatórias
+**Construindo dashboards no Grafana e Prometheus**
+- (Video: Criando Dashboards no Grafana)[https://www.youtube.com/watch?v=7uLNBh1TpWo]
+- O código utilizado no vídeo está disponível em [https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc4-tl1](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc4-tl1)
+
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)

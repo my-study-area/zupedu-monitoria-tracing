@@ -6,7 +6,7 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:h2:mem:bancodigital
+    url: jdbc:h2:/home/adriano/bancodigital.mv.db
     username: root
     password: root
     driver-class-name: org.h2.Driver

@@ -301,8 +301,58 @@ Você esta acompanhando os logs de produção do serviço de conta digital e pre
 - (Video: Criando Dashboards no Grafana)[https://www.youtube.com/watch?v=7uLNBh1TpWo]
 - O código utilizado no vídeo está disponível em [https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc4-tl1](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc4-tl1)
 
+### Atividades Obrigatórias
+**Adicionando métricas na aplicação Java/Spring**
+
+Produto deseja alguns dashs para ANALISE DE BUSINESS, nesse caso você irá construir um dashboard utilizando o banco de dados como a fonte de dados do Grafana.
+Você deverá criar um painel que indique a quantidade de livros vendidos por tipo de pagamento.
+Subir a aplicação que esta no diretório e seguir as orientações como esta no README do projeto.
+
+Projeto: [Projeto Base](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc4-tl2)
+
+**Criando painéis para monitoria no Grafana**
+
+Cinco vezes na mesma semana e a aplicação do banco digital ficou fora, então o time decidiu que precisa começar a monitorar a aplicação.
+A sua empresa já utiliza o Prometheus e o Grafana, o pessoal da área que cuida da infraestrutura dessas duas aplicações pediu o endpoint que precisam configurar no Prometheus e os usuários que serão adicionados no Grafana.
+
+[Projeto: Projeto Base](https://github.com/zup-academy/bancodigital/tree/monitoria-e-tracing-tc1-tl3)
+
+Dada a situação informada inicialmente descreva quais passos macros serão necessários para sua equipe expor métricas da jvm, das requisições http no Grafana para sua equipe monitorar?
+
+[Resposta do Especialista]
+
+1-Configurar o Spring Actutor, o Micrometer para Prometheus e habilitar endpoint na aplicação. já que através deles são geradas métricas do tipo que desejamos coletar.
+2-informar a url que deverá ser consultada pelo Prometheus para o time que gerencia estas aplicações na empresa.
+3-Passar os usuários para o time, ou realizar o processo de solicitação de acesso ao Grafana das pessoas do time.
+4- Criar o dashboard para análise desses aspectos da aplicação
+5- E finalizando com a criação dos painéis
+
+
+Agora vamos criar os painéis necessários. Considerando que o dashboard esta criado e que você já esta na tela de configuração do painel e precisa exibir o tempo máximo por endpoints existentes na aplicação, descreva como você faria isso.This question is required.
+
+[Resposta do Especialista]
+
+1- Selecionaria na Aba de Query a fonte de dados que seria o Prometheus.
+2- Selecionaria a métrica http_server_requests_seconds_max no campo "Metrics browser"
+3- Manteria o tipo de painel de time series porque é mais simples de entender os picos e baixas relacionados a esta métrica.
+4- Salvaria o painel clicando em "Apply" ao lado direito superior.
+
+Você deverá criar outro painel dentro do dashboard que foi criado. O painel deverá informar a quantidade de requests de transferencias/pix que executaram com erro. Considere para os passos que você já clicou para criar um painel
+
+1- Escolher na Aba metric a opção de fonte de dados do Prometheus.
+2- Selecionar no campo "Metrics browser" a métrica http_server_requests_seconds_count
+3- Clicaria na opção Builder localizado à direita da aba Query
+4- no campo Label selecionaria a opção "uri" = "/transferencias/pix"
+5- Clicaria no botão + ao lado direito para adicionar mais uma label
+6- Selecionaria status=500
+7- Abaixo selecionaria no botão operations > Aggregation > Count
+8 - Clicaria novamente no botão "Run Query"
+9- Alteraria o tipo de gráfico para Stats para ter uma melhor visualização.
+10- Clicaria em "Apply"
+
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)
 - [Spring Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html)
-- []()
+- [Querying Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/)
+- [Dashboads Grafana para importar](https://grafana.com/grafana/dashboards/)

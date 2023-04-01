@@ -8,6 +8,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/contas")
 public class ContaController {
@@ -45,4 +47,12 @@ public class ContaController {
 
         contaRepository.delete(conta);
     }
+
+    @GetMapping
+    public List<Conta> listarTodos(){
+        logger.info("Lista todos as contas");
+        return contaRepository.findAll();
+
+    }
+
 }

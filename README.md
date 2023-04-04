@@ -350,6 +350,13 @@ Você deverá criar outro painel dentro do dashboard que foi criado. O painel de
 9- Alteraria o tipo de gráfico para Stats para ter uma melhor visualização.
 10- Clicaria em "Apply"
 
+## Alertas e notificação
+### Teorias Necessárias
+1 - Entendendo mais sobre Alertas
+- [Video: Sobre Alertas](https://www.youtube.com/watch?v=gUx_rIsVJpk&ab_channel=4Zuppers)
+
+2 - Conteúdo Teórico escrito - Alertas
+- [Conteúdo escrito: Sobre Alertas](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/sobre-alertas.md)
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)

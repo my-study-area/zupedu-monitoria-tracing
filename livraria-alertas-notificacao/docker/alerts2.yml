@@ -1,0 +1,15 @@
+groups:
+  - name: manutencaoLivraria
+    rules:
+      - alert: tempoMaximoEmEstadoDeAnalise
+        expr: http_server_requests_seconds_max{uri="/categorias"} >= 0.01
+        for: 2m
+        labels:
+          app: livraria
+          severity: warning
+          group: backend-livraria
+          env: production
+        annotations:
+          title: Taxa de resposta máximo
+          summary: Tempo de resposta máximo para requisição está acima de 0.01
+          description: Tempo de resposta máximo para requisição de Categoria excederam o limite permitido

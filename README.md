@@ -328,7 +328,7 @@ Dada a situação informada inicialmente descreva quais passos macros serão nec
 5- E finalizando com a criação dos painéis
 
 
-Agora vamos criar os painéis necessários. Considerando que o dashboard esta criado e que você já esta na tela de configuração do painel e precisa exibir o tempo máximo por endpoints existentes na aplicação, descreva como você faria isso.This question is required.
+Agora vamos criar os painéis necessários. Considerando que o dashboard esta criado e que você já esta na tela de configuração do painel e precisa exibir o tempo máximo por endpoints existentes na aplicação, descreva como você faria isso..
 
 [Resposta do Especialista]
 
@@ -357,6 +357,62 @@ Você deverá criar outro painel dentro do dashboard que foi criado. O painel de
 
 2 - Conteúdo Teórico escrito - Alertas
 - [Conteúdo escrito: Sobre Alertas](https://github.com/zup-academy/materiais-publicos-treinamentos/blob/main/monitoria-e-tracing/sobre-alertas.md)
+
+### Atividades Preparatória
+**Construindo alertas no Prometheus**
+
+No vídeo a seguir implementamos o uso de alertas no Prometheus com o Alertmanager relacionados as métricas do serviço de Livraria.
+
+[Video: Configurando Alertas no Prometheus e Alert Manager na aplicação de Livraria](https://www.youtube.com/watch?v=V5qILlHfbRY&ab_channel=4Zuppers)
+
+O código utilizado no vídeo está disponível em :
+[Projeto: Livraria](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc5-tl1)
+
+Podemos afirmar que para configurar alertas no Prometheus precisamos do Alertmanager?.
+
+R: Não, Apesar do Alertmanager ser parte fundamental da arquitetura de alertas relacionado ao Prometheus, a configuração dos alertas é feita através das rules_files que independem do Alertmanager.
+
+Caso você queira continuar aprendendo mais sobre o assunto recomendamos a leitura da documentação oficial do Prometheus no item Alerting.
+
+Resumidamente qual a função do Alertmanager?. 
+
+R: Agrupar e redirecionar notificações,  Prometheus se encarrega de desduplicar, agrupar e roteá-los para a integração correta do receptor, como email, PagerDuty ou OpsGenie. Também cuida do silenciamento e inibição de alertas.
+
+Qual arquivo configuramos a plataforma que será utilizada pelo Alertmanager para enviar as notificações?.
+
+R: alertmanager.yml, O arquivo alertmanager.yml recebe as configurações globais e das plataformas que serão utilizadas para envio das notificações, para que o Alertmanager saiba como se integrar com essas plataformas.
+
+Qual das representações a seguir ilustra a configuração necessária para o Prometheus se comunicar com o Alertmanager?
+
+R: A configuração que é inserida no arquivo de configuração do Prometheus e que identifica com qual alertmanager realizar comunicação é :
+alerting:
+alertmanagers:
+- static_configs:
+- targets:
+- [endereço Alertmanager]
+
+Qual campo no arquivo de configuração de rules recebe a expressão Promql para regra de alerta?.
+
+R: No arquivo de rules, no campo expr colocamos a expressão em Promql que indica a regra que será analisada para gerar o alerta.
+
+É possível utilizar o Alertmanager para gerenciar notificações de outra fonte de alertas?
+
+R: Sim, Assim como o Prometheus se integra com o Alertmanager outras aplicações podem utilizar essa ferramenta para gerenciar as notificações. Ela dispões de apis para receber os dados necessários para realizar a parte de agrupamento, envio de notificações, silenciamento, etc.
+
+Qual status um alerta é gerado no Prometheus?
+
+R: Os alertas no Prometheus possuem 3 fases, a primeira é inactive, a segunda pending e a terceira firing, a terceira fase é quando o alerta de fato é gerado no sistema.
+
+Podemos afirmar que a diferença entre a fase do alerta ser pending ou firing é que em pending o alerta ainda não foi gerado pois ele precisa continuar atingindo os valores/parâmetros da regra considerando o valor de tempo estipulado na regra/rule
+
+R: Quando configuramos um alerta determinamos a expressão/parâmetros que serão considerados para análise e o tempo que será considerado para análise. Se os parâmetros são atingidos o alerta fica na fase/status pending, porém ele ainda não é disparado, para que seja disparado é necessário atingiros parâmetros pelo tempo determinado na configuração da rule, para que então seja alterado para Firing
+
+**Criando alertas no Grafana**
+
+No vídeo a seguir mostramos de maneira resumida como podemos criar alertas no Grafana sobre o serviço de Livraria.
+
+[Video: Configurando Alertas no Grafana da aplicação de Livraria](https://www.youtube.com/watch?v=Vdlg2nL2Xk4)
+
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)

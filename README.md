@@ -413,6 +413,118 @@ No vídeo a seguir mostramos de maneira resumida como podemos criar alertas no G
 
 [Video: Configurando Alertas no Grafana da aplicação de Livraria](https://www.youtube.com/watch?v=Vdlg2nL2Xk4)
 
+### Atividades Obrigatórias
+
+**Configurando alertas na aplicação de Banco Digital**
+
+Você e seu time entenderam que precisam configurar alertas para a aplicação de Banco Digital.
+Esta aplicação já esta configurada para gerar métricas através do Micrometer, o Prometheus já capturas estas métricas e o que falta é a configuração para gerar os alertas necessários.
+
+Você será o responsável pela task de configuração dessa parte no projeto.
+
+[Projeto: Banco Digital](https://github.com/zup-academy/bancodigital/tree/monitoria-e-tracing-tc5-tl2)
+
+Descreva quais passos serão necessários para a situação:
+- Você deverá configurar um alerta no Prometheus para quando a cpu estiver com uso acima de 0.5 durante 5 minutos
+
+[Resposta do Especialista]
+
+1-Criar o arquivo de rule no mesmo diretório que esta o arquivo do prometheus.yml
+
+2- Configuraro arquivo de rule como:
+```yml
+groups:
+  - name: regrasDeInfra
+    rules:
+      - alert: usoDeCpuAcima
+        expr: system_cpu_usage > 0.1
+        for: 5m
+        labels:
+          app: bancoDigital
+          severity: high
+        annotations:
+          summary: Uso de CPU acima do normal
+          description: A CPU atingiu o nível acima de 0.5 durante 5 minutos.
+```
+3-Adicionar rule_files no arquivo de configuração do prometheus.yml
+
+4-Configurar no volumes do arquivo de docker-compose o arquivo de rules
+
+5- Subir o Prometheus e identificar se a rule esta sendo identificada corretamente.
+
+
+Você deverá configurar o Alertmanager neste projeto para ele gerar as notificações para o e-mail do seu time, descreva quais os passos para isso.
+
+[Resposta do Especialista]
+1- Criar o arquivo de configuração alertmanager.yml
+2- Configurar o arquivo com alguns parâmetros semelhantes aos abaixo:
+```yml
+global:
+smtp_smarthost: 'smtp.gmail.com:587'
+smtp_from: 'seutime@zup.com.br'
+smtp_auth_identity: 'teste@gmail.com'
+smtp_require_tls: true
+
+templates:
+- '/etc/alertmanager/template/*.tmpl'
+
+route:
+repeat_interval: 1h
+receiver: operations-team
+
+receivers:
+- name: 'operations-team'
+email_configs:
+- to: 'seutime@zup.com.br'
+auth_username: 'emailalertas@zup.com.br'
+auth_password: 'jktqureuhthqtvpl'
+send_resolved: true
+```
+
+3- Configurar o alertmanager no arquivo prometheus.yml, adicionando o trecho :
+
+alerting:
+alertmanagers:
+- static_configs:
+- targets:
+- alertmanager:9093
+
+4- Adicionar no arquivo do docker-compose o container do serviço do Alertmanager semelhante ao trecho abaixo.
+
+alertmanager:
+image: prom/alertmanager:v0.23.0
+restart: unless-stopped
+ports:
+- "9093:9093"
+networks:
+- metricas
+
+Você deverá criar um novo alerta neste projeto. Este alerta deve garantir que quando a quantidade de erros das chamadas http ultrapassarem uma taxa média de 0.5 durante 10 minutos deverá gerar o Alerta . Descreva como você faria.
+
+[Resposta do Especialista]
+1- Criar um novo arquivo de rule
+
+2- Adicionar no arquivo as seguintes configurações:
+
+groups:
+- name: regrasDeRequest
+rules:
+- alert: quantidadeDeErrosChamadasHttp
+expr: rate(http_server_requests_seconds_count{status="500"} [1m]) > 0.5
+for: 10m
+labels:
+app: bancoDigital
+severity: warning
+annotations:
+summary: Quantidade de Erros HTTP
+description: Quantidade de erros das requests http ultrapassaram 50%
+
+3- Adicionar o arquivo de regras novo no mapeamento do arquivo prometheus.yml
+
+4- Adicionar o arquivo no mapeamento de volumes do arquivo do docker-compose.
+
+5- Validar se a regra esta mapeado no prometheus
+
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)

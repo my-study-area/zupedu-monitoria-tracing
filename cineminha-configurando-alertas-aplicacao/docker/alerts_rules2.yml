@@ -1,0 +1,15 @@
+groups:
+  - name: cineminha
+    rules:
+      - alert: request400Ou500AcimaDeZeroPontoSete
+        expr: rate(http_server_requests_seconds_count{status=~"[45]00"} [10m]) > 0.7
+        for: 10m
+        labels:
+          app: cineminha
+          severity: critical
+          group: backend-cineminha
+          env: production
+        annotations:
+          title: Request 400 ou 500 acima de 0.7
+          summary: Request 400 ou 500 acima de 0.7
+          description: Request 400 ou 500 acima de 0.7

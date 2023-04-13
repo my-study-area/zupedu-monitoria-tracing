@@ -1,5 +1,5 @@
 groups:
-  - name: livraria
+  - name: cineminha
     rules:
       - alert: usoMemoriaMaior70Porcento
         expr: 100 * (1 - (jvm_memory_used_bytes{area="heap"} / jvm_memory_max_bytes{area="heap"})) > 70

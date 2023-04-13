@@ -1,0 +1,43 @@
+version: '3.0'
+services:
+  cineminha:
+    build: ..
+    ports:
+      - "8081:8080"
+    hostname: cineminha
+    container_name: cineminha
+    volumes:
+      - ../logs:/logs
+    networks:
+      - metricas
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - prometheus-volume:/etc/prometheus/
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./alerts_rules.yml:/etc/prometheus/alerts_rules.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - metricas
+
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - grafana-volume:/var/lib/grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - metricas
+    depends_on:
+      - prometheus
+
+volumes:
+  grafana-volume:
+  prometheus-volume:
+
+
+networks:
+  metricas:
+    driver: bridge

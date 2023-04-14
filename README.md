@@ -525,6 +525,22 @@ description: Quantidade de erros das requests http ultrapassaram 50%
 
 5- Validar se a regra esta mapeado no prometheus
 
+**Configurando alertas na aplicação Cineminha**
+
+A aplicação Cineminha esta sem nenhuma configuração relacionada a alertas e é necessária a configuração de alguns parâmetros conforme o time mapeou:
+Quando a memória que esta sendo utilizada da JVM é maior de 70% da quantidade de memória disponível durante 5 minutos
+
+Quando a quantidade de chamadas http com retorno 400 e 500 estiverem acima da taxa 0.7 no período de 10 minutos deve desperar o alarme.
+
+[Projeto: Cineminha](https://github.com/zup-academy/cineminha/tree/monitoria-tracing-tc5-tl3)
+
+Cole aqui o link do commit/gist desenvolvido relativo as configurações necessárias para incluir alertas das métricas da aplicação referente ao primeiro alerta mapeado:
+
+- Quando a memória que esta sendo utilizada da JVM é maior de 70% da quantidade de memória disponível para JVM durante 5 minutosThis question is required. 
+
+[Resposta do Especialista]
+[Link da Resposta do Especialista](https://gist.github.com/paulasantanazup/ebd83a41ec5722a07768ae9bd2875a8b)
+
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)

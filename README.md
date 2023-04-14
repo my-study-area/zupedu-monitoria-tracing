@@ -541,9 +541,39 @@ Cole aqui o link do commit/gist desenvolvido relativo as configurações necess�
 [Resposta do Especialista]
 [Link da Resposta do Especialista](https://gist.github.com/paulasantanazup/ebd83a41ec5722a07768ae9bd2875a8b)
 
+**Configurando alertas no Grafana na aplicação de Banco Digital**
+
+Você e seu time entenderam que precisam configurar alertas para a aplicação de Banco Digital não só no Prometheus, já que utilizam também o Grafana para monitoramento.
+
+Esta aplicação já esta configurada para gerar métricas através do Micrometer, o Prometheus já capturas estas métricas, porém terá que configurar o alerta no Grafana conforme o que o time entendeu que seria necessário.
+
+Você será o responsável pela task de configuração dessa parte no projeto, baixe o projeto base e execute os passos na atividade conforme o time solicitou.
+
+[Projeto: Banco Digital](https://github.com/zup-academy/bancodigital/tree/monitoria-e-tracing-tc5-tl2)
+
+[Resposta do Especialista]
+
+1- Acessar o Grafana no menu de alertas > alert rules
+
+2- Clicar na opção New Alert Rule
+
+3- Preencher os primeiros campos obrigatórios como rule name, Folder e Group
+
+4- Na parte "Create a query to be alerted on", na query A , no campo Metrics Browser, vou adicionar a métrica "system_cpu_usage"
+
+5- Na Query B configurar o parêmetro de análise da Query A como
+conditions when last() of A is above 0.5
+
+6- Na parte de "Define alert conditions" no campo for colocar o valor 10m
+
+7- Preencher os campos de "Add details for your alert" conforme estipulado pelo time na task.
+
 ## Links
 - [Video: Implementando Spring Actuator em uma Aplicação de Livraria](https://www.youtube.com/watch?v=fZcEII-NNdQ&ab_channel=4Zuppers)
 - [Código fonte](https://github.com/zup-academy/livraria/tree/monitoria-tracing-tc-2-tl-1)
 - [Spring Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html)
-- [Querying Prometheus](https://prometheus.io/docs/prometheus/latest/querying/basics/)
+- [Querying Prometheus - PromQL](https://prometheus.io/docs/prometheus/latest/querying/basics/)
 - [Dashboads Grafana para importar](https://grafana.com/grafana/dashboards/)
+- [Alerting overview](https://prometheus.io/docs/alerting/latest/overview/)
+- [Exemplos de Prometheus](https://github.com/prometheus/prometheus/tree/main/documentation/examples)
+- [Exemplos de rules no Prometheus](https://awesome-prometheus-alerts.grep.to/rules)
